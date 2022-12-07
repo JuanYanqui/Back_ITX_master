@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
 @Table(name = "\"detallecompras\"")
 public class DetalleCompra {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Temporal(TemporalType.TIMESTAMP)

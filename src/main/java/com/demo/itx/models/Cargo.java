@@ -11,7 +11,7 @@ import javax.persistence.Id;
 public class Cargo implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idCargo;
 
 	private String nombre;

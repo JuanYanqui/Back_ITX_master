@@ -22,7 +22,7 @@ import javax.persistence.TemporalType;
 @Table(name = "\"controlmercaderias\"")
 public class ControlMercaderia {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "stock_min", nullable = false)
     private int stock_min;

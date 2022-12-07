@@ -20,6 +20,7 @@ import java.util.zip.Inflater;
 
 @Controller
 @CrossOrigin
+@RequestMapping("/api")
 public class ImageController {
     //@towired
     //private ImageService service;
@@ -43,7 +44,7 @@ public class ImageController {
         return new  ResponseEntity<String>("Error", HttpStatus.CREATED);
     }
 
-    @GetMapping(path = { "/get/{imageName}" })
+    @GetMapping(path = { "/verfoto/{imageName}" })
     public Imagen getImage(@PathVariable("imageName") String imageName) throws IOException {
 
         final Optional<Imagen> retrievedImage = imageRepository.findByName(imageName);
