@@ -31,6 +31,7 @@ public class Persona implements Serializable{
 	public Persona() {
 
 	}
+	//////cambios
 	public Persona(Long idPersona, String cedula, String nombres, String apellidos, Date fechaNacimmiento,
 			String genero, String direccion, String correo, String telefono, String celular, String foto) {
 
