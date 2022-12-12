@@ -18,9 +18,9 @@ import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
 
-@Controller
+@RestController
 @CrossOrigin
-@RequestMapping("/api")
+@RequestMapping(path = "/image")
 public class ImageController {
     //@towired
     //private ImageService service;
@@ -91,4 +91,5 @@ public class ImageController {
         }
         return outputStream.toByteArray();
     }
+
 }
