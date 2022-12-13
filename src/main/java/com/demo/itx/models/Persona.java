@@ -26,14 +26,13 @@ public class Persona implements Serializable{
 	private String telefono;
 	private String celular;
 
-	private String foto;
 
 	public Persona() {
 
 	}
 	//////cambios
 	public Persona(Long idPersona, String cedula, String nombres, String apellidos, Date fechaNacimmiento,
-			String genero, String direccion, String correo, String telefono, String celular, String foto) {
+			String genero, String direccion, String correo, String telefono, String celular) {
 
 		this.idPersona = idPersona;
 		this.cedula = cedula;
@@ -45,7 +44,6 @@ public class Persona implements Serializable{
 		this.correo = correo;
 		this.telefono = telefono;
 		this.celular = celular;
-		this.foto = foto;
 	}
 
 	public Long getIdPersona() {
@@ -112,11 +110,4 @@ public class Persona implements Serializable{
 		return serialVersionUID;
 	}
 
-	public String getFoto() {
-		return foto;
-	}
-
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
 }
