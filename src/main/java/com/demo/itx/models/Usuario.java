@@ -25,13 +25,13 @@ public class Usuario implements Serializable {
 	public Usuario() {
 	}
 
-	public Usuario(String username, String password, boolean estado, String foto) {
-		this.username = username;
-		this.password = password;
-		this.estado = estado;
-		this.foto = foto;
-
-	}
+//	public Usuario(String username, String password, boolean estado, String foto) {
+//		this.username = username;
+//		this.password = password;
+//		this.estado = estado;
+//		this.foto = foto;
+//
+//	}
 
 	@ManyToOne
 	private Persona persona;
@@ -41,6 +41,16 @@ public class Usuario implements Serializable {
 
 	@ManyToOne
 	private Roles rol;
+
+	public Usuario(String username, String password, boolean estado, String foto, Persona persona, Empresa empresa, Roles rol) {
+		this.username = username;
+		this.password = password;
+		this.estado = estado;
+		this.foto = foto;
+		this.persona = persona;
+		this.empresa = empresa;
+		this.rol = rol;
+	}
 
 	public Long getIdUsuario() {
 		return idUsuario;
