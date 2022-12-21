@@ -13,6 +13,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Optional;
 import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
@@ -41,10 +44,10 @@ public class ImageController {
         Imagen img = new Imagen(file.getOriginalFilename(), file.getContentType(),
                 compressBytes(file.getBytes()));
         imageRepository.save(img);
-        return new  ResponseEntity<String>("Error", HttpStatus.CREATED);
+        return new ResponseEntity<String>("Error", HttpStatus.CREATED);
     }
 
-    @GetMapping(path = { "/verfoto/{imageName}" })
+    @GetMapping(path = {"/verfoto/{imageName}"})
     public Imagen getImage(@PathVariable("imageName") String imageName) throws IOException {
 
         final Optional<Imagen> retrievedImage = imageRepository.findByName(imageName);
@@ -52,6 +55,24 @@ public class ImageController {
                 decompressBytes(retrievedImage.get().getPicByte()));
         return img;
     }
+
+    // NEWS
+    private static String UPLOAD_DIR = "uploads";
+
+    @PostMapping("/api/images/upload")
+    public void uploadImage(@RequestParam("image") MultipartFile image) throws IOException {
+        byte[] bytes = image.getBytes();
+        Path path = Paths.get(UPLOAD_DIR + "/" + image.getOriginalFilename());
+        Files.write(path, bytes);
+    }
+    @GetMapping("/images/{imageName}")
+    public byte[] getImagen(@PathVariable String imageName) throws IOException {
+        Path path = Paths.get(UPLOAD_DIR + "/" + imageName);
+        return Files.readAllBytes(path);
+    }
+
+
+    //NEWS
 
     // compress the image bytes before storing it in the database
     public static byte[] compressBytes(byte[] data) {

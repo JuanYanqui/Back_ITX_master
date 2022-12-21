@@ -15,10 +15,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class ImageService {
-    Logger logger = LoggerFactory.getLogger(ImageService.class);
 
-   /* private String bucketName = "itx-storage";
-    // private String bucketName = "examenmorochoroy";
+/*    Logger logger = LoggerFactory.getLogger(ImageService.class);
+
+    private String bucketName = "itx-storage";
     @Autowired
     private AmazonS3 s3Client;
 
