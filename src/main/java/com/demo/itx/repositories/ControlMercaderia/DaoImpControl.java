@@ -3,8 +3,8 @@ package com.demo.itx.repositories.ControlMercaderia;
 import java.util.List;
 import java.util.Optional;
 
-import com.demo.itx.models.ControlMercaderia;
 import com.demo.itx.repositories.Dao;
+import com.demo.itx.models.ControlMercaderia;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
