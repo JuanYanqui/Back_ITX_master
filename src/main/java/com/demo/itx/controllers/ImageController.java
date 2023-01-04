@@ -24,7 +24,7 @@ public class ImageController {
     // NEWS
     private static String UPLOAD_DIR = "uploads";
 
-    @PostMapping("/api/images/upload")
+    @PostMapping("/subir")
     public void uploadImage(@RequestParam("image") MultipartFile image) throws IOException {
         byte[] bytes = image.getBytes();
         Path path = Paths.get(UPLOAD_DIR + "/" + image.getOriginalFilename());
